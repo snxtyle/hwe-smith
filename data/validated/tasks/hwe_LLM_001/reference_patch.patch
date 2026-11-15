@@ -1,0 +1,5 @@
+--- a/rtl/uart_rx.v
++++ b/rtl/uart_rx.v
+@@ -1 +1 @@
+-bit_cnt <= DATA_WIDTH+3;
++bit_cnt <= DATA_WIDTH+2;

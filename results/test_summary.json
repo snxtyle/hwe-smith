@@ -1,0 +1,14 @@
+{
+  "unit_tests": {
+    "total": 12,
+    "passed": 12
+  },
+  "integration_tests": {
+    "total": 4,
+    "passed": 4,
+    "note": "run real Icarus simulations, ~5 min total"
+  },
+  "overall": "16/16 PASS",
+  "date": "2026-11-13",
+  "commands": ".venv/bin/python -m pytest tests/ -q"
+}

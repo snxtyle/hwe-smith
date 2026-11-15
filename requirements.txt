@@ -1,0 +1,6 @@
+cocotb==2.1.0
+cocotb-test
+cocotbext-axi
+cocotbext-uart
+pytest
+pyyaml

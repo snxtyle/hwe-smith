@@ -1,0 +1,286 @@
+{
+  "tasks": [
+    {
+      "task_id": "hwe_HIST_db0017a_rx",
+      "strategy": "history",
+      "category": "protocol",
+      "file": "rtl/uart_rx.v",
+      "fingerprint": "7f238c873ebca1cb",
+      "keep": true,
+      "duplicate_of": null,
+      "difficulty": {
+        "tier": "medium",
+        "reasons": [
+          "category/strategy suggests multi-cycle or protocol reasoning (protocol)"
+        ]
+      },
+      "leakage_violations": []
+    },
+    {
+      "task_id": "hwe_HIST_db0017a_tx",
+      "strategy": "history",
+      "category": "protocol",
+      "file": "rtl/uart_tx.v",
+      "fingerprint": "69f48ecbea7bac9c",
+      "keep": true,
+      "duplicate_of": null,
+      "difficulty": {
+        "tier": "medium",
+        "reasons": [
+          "category/strategy suggests multi-cycle or protocol reasoning (protocol)"
+        ]
+      },
+      "leakage_violations": []
+    },
+    {
+      "task_id": "hwe_LLM_001",
+      "strategy": "llm",
+      "category": "boundary",
+      "file": "rtl/uart_rx.v",
+      "fingerprint": "bb69a67d05e14036",
+      "keep": true,
+      "duplicate_of": null,
+      "difficulty": {
+        "tier": "medium",
+        "reasons": [
+          "failure manifests as hang/timeout (deadlock-style debugging)"
+        ]
+      },
+      "leakage_violations": []
+    },
+    {
+      "task_id": "hwe_LLM_003",
+      "strategy": "llm",
+      "category": "reset",
+      "file": "rtl/uart_rx.v",
+      "fingerprint": "ada6c6fd0edd59c6",
+      "keep": true,
+      "duplicate_of": null,
+      "difficulty": {
+        "tier": "medium",
+        "reasons": [
+          "failure manifests as hang/timeout (deadlock-style debugging)"
+        ]
+      },
+      "leakage_violations": []
+    },
+    {
+      "task_id": "hwe_LLM_004",
+      "strategy": "llm",
+      "category": "counter",
+      "file": "rtl/uart_tx.v",
+      "fingerprint": "12cbdec544180691",
+      "keep": true,
+      "duplicate_of": null,
+      "difficulty": {
+        "tier": "hard",
+        "reasons": [
+          "failure manifests as hang/timeout (deadlock-style debugging)"
+        ]
+      },
+      "leakage_violations": []
+    },
+    {
+      "task_id": "hwe_LLM_006",
+      "strategy": "rules",
+      "category": "handshake",
+      "file": "rtl/uart_tx.v",
+      "fingerprint": "abc814a290ed1774",
+      "keep": true,
+      "duplicate_of": null,
+      "difficulty": {
+        "tier": "hard",
+        "reasons": [
+          "failure manifests as hang/timeout (deadlock-style debugging)"
+        ]
+      },
+      "leakage_violations": []
+    },
+    {
+      "task_id": "hwe_RULE_001",
+      "strategy": "rules",
+      "category": "boundary",
+      "file": "rtl/uart_rx.v",
+      "fingerprint": "33ca8a5e203bea98",
+      "keep": true,
+      "duplicate_of": null,
+      "difficulty": {
+        "tier": "medium",
+        "reasons": [
+          "failure manifests as hang/timeout (deadlock-style debugging)"
+        ]
+      },
+      "leakage_violations": []
+    },
+    {
+      "task_id": "hwe_RULE_002",
+      "strategy": "rules",
+      "category": "boundary",
+      "file": "rtl/uart_rx.v",
+      "fingerprint": "bdcb440729cd74d1",
+      "keep": true,
+      "duplicate_of": null,
+      "difficulty": {
+        "tier": "medium",
+        "reasons": [
+          "failure manifests as hang/timeout (deadlock-style debugging)"
+        ]
+      },
+      "leakage_violations": []
+    },
+    {
+      "task_id": "hwe_RULE_007",
+      "strategy": "rules",
+      "category": "protocol",
+      "file": "rtl/uart_rx.v",
+      "fingerprint": "114ba16ba0caa623",
+      "keep": true,
+      "duplicate_of": null,
+      "difficulty": {
+        "tier": "medium",
+        "reasons": [
+          "category/strategy suggests multi-cycle or protocol reasoning (protocol)"
+        ]
+      },
+      "leakage_violations": []
+    },
+    {
+      "task_id": "hwe_RULE_010",
+      "strategy": "rules",
+      "category": "counter",
+      "file": "rtl/uart_tx.v",
+      "fingerprint": "dc3f89c2e5b20449",
+      "keep": true,
+      "duplicate_of": null,
+      "difficulty": {
+        "tier": "hard",
+        "reasons": [
+          "failure manifests as hang/timeout (deadlock-style debugging)"
+        ]
+      },
+      "leakage_violations": []
+    },
+    {
+      "task_id": "hwe_INT_001",
+      "strategy": "rules",
+      "category": "boundary",
+      "file": "rtl/uart_rx.v",
+      "fingerprint": "33ca8a5e203bea98",
+      "keep": false,
+      "duplicate_of": "hwe_RULE_001",
+      "difficulty": {
+        "tier": "medium",
+        "reasons": [
+          "failure manifests as hang/timeout (deadlock-style debugging)"
+        ]
+      },
+      "leakage_violations": []
+    }
+  ],
+  "dedup": [
+    {
+      "task_id": "hwe_HIST_db0017a_rx",
+      "fingerprint": "7f238c873ebca1cb",
+      "keep": true,
+      "reason": "first occurrence",
+      "duplicate_of": null
+    },
+    {
+      "task_id": "hwe_HIST_db0017a_tx",
+      "fingerprint": "69f48ecbea7bac9c",
+      "keep": true,
+      "reason": "first occurrence",
+      "duplicate_of": null
+    },
+    {
+      "task_id": "hwe_LLM_001",
+      "fingerprint": "bb69a67d05e14036",
+      "keep": true,
+      "reason": "first occurrence",
+      "duplicate_of": null
+    },
+    {
+      "task_id": "hwe_LLM_003",
+      "fingerprint": "ada6c6fd0edd59c6",
+      "keep": true,
+      "reason": "first occurrence",
+      "duplicate_of": null
+    },
+    {
+      "task_id": "hwe_LLM_004",
+      "fingerprint": "12cbdec544180691",
+      "keep": true,
+      "reason": "first occurrence",
+      "duplicate_of": null
+    },
+    {
+      "task_id": "hwe_LLM_006",
+      "fingerprint": "abc814a290ed1774",
+      "keep": true,
+      "reason": "first occurrence",
+      "duplicate_of": null
+    },
+    {
+      "task_id": "hwe_RULE_001",
+      "fingerprint": "33ca8a5e203bea98",
+      "keep": true,
+      "reason": "first occurrence",
+      "duplicate_of": null
+    },
+    {
+      "task_id": "hwe_RULE_002",
+      "fingerprint": "bdcb440729cd74d1",
+      "keep": true,
+      "reason": "first occurrence",
+      "duplicate_of": null
+    },
+    {
+      "task_id": "hwe_RULE_007",
+      "fingerprint": "114ba16ba0caa623",
+      "keep": true,
+      "reason": "first occurrence",
+      "duplicate_of": null
+    },
+    {
+      "task_id": "hwe_RULE_010",
+      "fingerprint": "dc3f89c2e5b20449",
+      "keep": true,
+      "reason": "first occurrence",
+      "duplicate_of": null
+    },
+    {
+      "task_id": "hwe_INT_001",
+      "fingerprint": "33ca8a5e203bea98",
+      "keep": false,
+      "reason": "duplicate fingerprint of earlier accepted task",
+      "duplicate_of": "hwe_RULE_001"
+    }
+  ],
+  "unique_kept": [
+    "hwe_HIST_db0017a_rx",
+    "hwe_HIST_db0017a_tx",
+    "hwe_LLM_001",
+    "hwe_LLM_003",
+    "hwe_LLM_004",
+    "hwe_LLM_006",
+    "hwe_RULE_001",
+    "hwe_RULE_002",
+    "hwe_RULE_007",
+    "hwe_RULE_010"
+  ],
+  "duplicates": [
+    {
+      "task_id": "hwe_INT_001",
+      "duplicate_of": "hwe_RULE_001",
+      "reason": "duplicate fingerprint of earlier accepted task"
+    }
+  ],
+  "difficulty_distribution": {
+    "easy": 0,
+    "medium": 7,
+    "hard": 3
+  },
+  "repo_commit": {
+    "path": "/Users/suraj.nagre/Desktop/hwe-smith/cache/verilog-uart"
+  }
+}

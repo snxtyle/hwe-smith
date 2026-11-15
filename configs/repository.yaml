@@ -1,0 +1,45 @@
+# HWE-Smith selected repository registry (JSONL format, one object per line).
+# Only the primary repo is registered for the prototype; alternatives were
+# evaluated and rejected (see docs/data_collection.md).
+repository: alexforencich/verilog-uart
+git_url: https://github.com/alexforencich/verilog-uart
+commit: 1b867e53af738e4a8bc7c839ca2f1c07f40382dc
+commit_date: "2025-02-27"
+language: verilog-2001
+license: MIT (COPYING)
+
+# RTL / TB layout
+rtl_paths:
+  - rtl/uart_rx.v
+  - rtl/uart_tx.v
+testbench_paths:
+  - tb/uart_rx/test_uart_rx.py
+  - tb/uart_tx/test_uart_tx.py
+
+# Simulation (cocotb 2.x + Icarus Verilog 13.0; Verilator 5.054 available as fallback)
+simulator: icarus
+top_modules:
+  - name: uart_rx
+    tb_dir: tb/uart_rx
+    tb_module: test_uart_rx
+  - name: uart_tx
+    tb_dir: tb/uart_tx
+    tb_module: test_uart_tx
+
+build_command: "make SIM=icarus"   # cocotb Makefile.sim drives iverilog
+test_command: "make SIM=icarus"    # single make target: compile + simulate + results.xml
+
+environment:
+  python: "3.14"
+  packages: [cocotb==2.1.0, cocotb-test, cocotbext-axi, cocotbext-uart]
+  system: [iverilog-13.0, verilator-5.054]
+
+baseline_status: PASS   # uart_rx: 2/2, uart_tx: 2/2 tests pass on pristine commit
+
+notes: >
+  Selected over Ibex/PicoRV32 because it is a small peripheral with two
+  self-checking cocotb testbenches (fail-to-pass provable in seconds),
+  pure Verilog-2001 (no SV/VPI complications), MIT license, and a short
+  linear git history containing genuine RTL fixes usable for historical
+  fix reversion. Deprecation notice points to fpganinja/taxi; the pinned
+  commit remains fully functional.

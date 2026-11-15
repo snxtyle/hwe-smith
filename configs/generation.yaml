@@ -1,0 +1,43 @@
+# HWE-Smith generation configuration — single source of truth for timeouts/operators.
+repository_config: configs/repository.yaml
+cache_dir: cache/verilog-uart
+workspace_dir: data/work
+timeout_seconds: 60              # must match SimRunner default unless overridden
+
+seeds:
+  rules: 20261113
+  llm: 20261114
+
+strategies:
+  rules:
+    enabled: true
+    # Must match keys in src/hwe_smith/generators/rules.py::OPERATORS
+    operators:
+      - boundary_lt_le
+      - off_by_one_arith
+      - shift_width
+      - reset_polarity
+      - handshake
+      - stop_bit
+      - overrun
+      - data_corrupt
+      - tx_framing
+    max_per_file: 20
+  llm:
+    enabled: true
+    mode: offline_jsonl          # live requires HWE_SMITH_LLM_API_URL + HWE_SMITH_LLM_API_KEY
+    candidates_path: data/generated/llm_candidates.jsonl
+    max_candidates: 10
+  history:
+    enabled: true
+    executed_fixes:
+      - db0017a22c57731d69a4a2844bc1e4f3f36abd10
+    mined_but_not_executed:
+      - 8a1df4c215731ea6704c18e6e4009e7603dcf748
+      - 62eb6f5d45b62be3029308da58c64bafbdb3aac6
+
+validation:
+  repeat_runs: 2
+  regression_targets:
+    - uart_rx
+    - uart_tx

@@ -1,0 +1,7 @@
+--- a/rtl/uart_tx.v
++++ b/rtl/uart_tx.v
+@@ -1 +1 @@
+-bit_cnt <= DATA_WIDTH;
+                data_reg <= {1'b1, s_axis_tdata};
++bit_cnt <= DATA_WIDTH+1;
+                data_reg <= {1'b1, s_axis_tdata};

@@ -1,0 +1,14 @@
+{
+  "task_id": null,
+  "file": "rtl/uart_rx.v",
+  "visible": [
+    "problem_statement.md",
+    "uart_rx.v",
+    "README.md"
+  ],
+  "forbidden": [
+    "*.orig",
+    "reference_patch.patch",
+    "metadata.json"
+  ]
+}

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hwe-smith"
+version = "0.1.0"
+description = "Synthetic hardware bug-fix task generation prototype (SWE-smith for RTL)"
+requires-python = ">=3.11"
+dependencies = ["cocotb==2.1.0", "cocotb-test", "cocotbext-axi", "cocotbext-uart", "pyyaml"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+hwe_smith = "hwe_smith.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

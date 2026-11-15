@@ -1,0 +1,5 @@
+--- a/rtl/uart_rx.v
++++ b/rtl/uart_rx.v
+@@ -1 +1 @@
+-end else if (bit_cnt > 0) begin
++end else if (bit_cnt > 1) begin

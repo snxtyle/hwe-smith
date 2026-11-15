@@ -1,0 +1,5 @@
+--- a/rtl/uart_rx.v
++++ b/rtl/uart_rx.v
+@@ -1 +1 @@
+-data_reg <= {data_reg[DATA_WIDTH-2:0], rxd_reg};
++data_reg <= {rxd_reg, data_reg[DATA_WIDTH-1:1]};

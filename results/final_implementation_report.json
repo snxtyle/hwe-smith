@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-11-15",
+  "repo_under_study": {
+    "name": "alexforencich/verilog-uart",
+    "commit": "1b867e53af738e4a8bc7c839ca2f1c07f40382dc",
+    "simulator": "icarus",
+    "framework": "cocotb==2.1.0"
+  },
+  "baseline": {
+    "uart_rx": {"tests": 2, "passed": 2, "status": "PASS", "verified_on": "2026-11-15"},
+    "uart_tx": {"tests": 2, "passed": 2, "status": "PASS", "verified_on": "2026-11-15"},
+    "data_integrity_assert_present": true
+  },
+  "candidates": {
+    "rules": {"in": 12, "accepted": 4, "rejected": 8, "rejection_reasons": {"REJECT_SURVIVES": 8}},
+    "llm": {"in": 6, "accepted": 4, "rejected": 2, "rejection_reasons": {"REJECT_SURVIVES": 2}, "mode": "offline_jsonl"},
+    "history": {
+      "mined_commits": 5,
+      "rtl_bug_fix_mined": 3,
+      "executed_reversals": 2,
+      "accepted": 2,
+      "rejected": 0,
+      "note": "Only db0017a RX/TX executed; 8a1df4c and 62eb6f5 mined but not executed"
+    },
+    "total_in": 20,
+    "total_accepted_raw": 10
+  },
+  "dataset": {
+    "validated_task_dirs_on_disk": 11,
+    "includes_integration_artifact": "hwe_INT_001",
+    "unique_after_dedup": 10,
+    "duplicates": [
+      {"task_id": "hwe_INT_001", "duplicate_of": "hwe_RULE_001", "reason": "same normalized edit fingerprint"}
+    ],
+    "unique_task_ids": [
+      "hwe_HIST_db0017a_rx",
+      "hwe_HIST_db0017a_tx",
+      "hwe_LLM_001",
+      "hwe_LLM_003",
+      "hwe_LLM_004",
+      "hwe_LLM_006",
+      "hwe_RULE_001",
+      "hwe_RULE_002",
+      "hwe_RULE_007",
+      "hwe_RULE_010"
+    ],
+    "difficulty_distribution_unique": {"easy": 0, "medium": 7, "hard": 3},
+    "exports_root": "data/exports",
+    "agent_evaluator_split": true
+  },
+  "tests": {
+    "unit": {"total": 16, "passed": 16, "command": ".venv/bin/python -m pytest tests/unit -q", "verified_on": "2026-11-15"},
+    "integration_smoke": {
+      "ran": ["test_1_clean_repo_compiles_and_passes", "test_2_mutation_makes_it_fail"],
+      "passed": 2,
+      "note": "Full 4-test integration suite not fully re-run in this session (~5+ min); smoke subset passed"
+    }
+  },
+  "reproducibility": {
+    "contract_checks": ["baseline", "mutate_fail", "restore_pass", "cross_module_regression", "mutated_rerun"],
+    "seed_env_var": "RANDOM_SEED",
+    "stale_sim_build_cleared": true
+  },
+  "infrastructure_failures_this_session": [],
+  "live_llm_generation": false,
+  "agent_eval_harness": false,
+  "earlier_fifo_verilator_prototype": "not in this tree; do not merge counts"
+}

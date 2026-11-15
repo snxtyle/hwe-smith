@@ -1,0 +1,5 @@
+--- a/rtl/uart_tx.v
++++ b/rtl/uart_tx.v
+@@ -1 +1 @@
+-s_axis_tready_reg <= 1;
++s_axis_tready_reg <= !s_axis_tready_reg;
