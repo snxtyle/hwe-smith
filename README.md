@@ -6,6 +6,30 @@
 
 ---
 
+## How it works
+
+| Step | Stage | What happens | Output |
+|:----:|-------|--------------|--------|
+| **1** | **Pin repo** | Clone UART at a fixed commit; confirm baseline RX/TX sims pass | Clean environment |
+| **2** | **Generate bugs** | Create candidates via **Rules** · **LLM** · **History** | Candidate RTL edits |
+| **3** | **Simulate** | Run cocotb + Icarus on an isolated workspace copy | Pass / fail / hang log |
+| **4** | **Validate** | 7-check contract: baseline → fail → restore → regress → repro | `ACCEPTED` or `REJECT_*` |
+| **5** | **Package** | Leak-check statement; split agent view vs evaluator key | Task + exports |
+| **6** | **Dedup & tier** | Fingerprint duplicates; assign easy / medium / hard | Unique dataset |
+
+```text
+  Repo (pinned)
+       │
+       ├── Rules ──┐
+       ├── LLM ────┼──► Simulate ──► Validate ──► Package ──► Dataset
+       └── History ┘         │              │
+                             │              ├── ACCEPTED → data/exports/
+                             │              └── REJECTED → logged reason
+                             └── real Icarus + cocotb
+```
+
+---
+
 ## Results
 
 | Metric | Value |
